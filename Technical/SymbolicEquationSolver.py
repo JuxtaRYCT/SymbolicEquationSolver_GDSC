@@ -14,9 +14,9 @@ matcher=r'^([+-]?\d+)x\^2([+-]\d+x)?([+-]\d+)?$'
 match=re.match(matcher,eqn)
 
 if match:
-    a = float(match.group(1))
-    b = float(match.group(2).replace("x", "")) if match.group(2) else 0
-    c = float(match.group(3)) if match.group(3) else 0
+    a = int(match.group(1))
+    b = int(match.group(2).replace("x", "")) if match.group(2) else 0
+    c = int(match.group(3)) if match.group(3) else 0
     d=0
     d=float(d)
     d=b**2-4*a*c
@@ -32,7 +32,8 @@ if match:
         imaginary=float(imaginary)
         real=0
         real=float(real)
-        imaginary=(abs(b^2-4*a*c)/(2*a))**0.5
+        
+        imaginary=(((-(b^2-4*a*c))**0.5))/(2*a)
         real=-b/(2*a)
         print("The solutions to the equation are:\n Root-1: " ,real,"+",imaginary,"i\n","Root-2: ",real,"-",imaginary,"i\n")
     elif(d>0):
